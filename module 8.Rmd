@@ -58,14 +58,13 @@ lapply(raven,head)
 
 species <- c("Myiarchus crinitus","Icterus galbula","Pheucticus ludovicianus","Coccyzus americanus","Setophaga caerulescens")
 
-y <- paste0("1990",",","2019")
-m <- paste0("3",",","6")
+y <- paste0("2000",",","2019")
+m <- paste0("4",",","5")
 
 dat.l <-list()
 
 for(s in species){
   
-  ## setting the limit=0 returns no records but can give you the number of observations if you access the meta data
 n.obs <-  occ_data(scientificName = s,year=y,month=m,limit=0,country="US",basisOfRecord = "HUMAN_OBSERVATION",stateProvince="Massachusetts")$meta$count 
 
 print(n.obs)
@@ -81,8 +80,6 @@ dat <- rbindlist(dat.l,fill=T)
 head(dat)
 
 saveRDS(data,"massbird.data.RDS")
-dat <- readRDS("massbird.data.RDS")
-str(dat)
 
 dat%>%
   group_by(year,species)%>%
