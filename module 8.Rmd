@@ -114,7 +114,6 @@ plot_usmap(
 weather.d <- meteo_pull_monitors(sta.d$id,date_min = "2000-01-01")
 
 mc<- dat%>%
-  filter(species=="Setophaga caerulescens")%>%
   group_by(year)%>%
   mutate(date=as.Date(paste0(year,"-",month,"-",day)),
          j.day=julian(date,origin=as.Date(paste0(unique(year),"-01-01")))
@@ -131,7 +130,7 @@ mc%>%
 mc.pred <- mc%>%
   group_by(year)%>%
  summarize(
-   pred=predict(nls(prop~SSlogis(j.day,Asym, xmid, scal)),newdata=data.frame(j.day=min(j.day):max(j.day))),#predict the logistic curve for each species
+   pred=predict(nls(prop~SSlogis(j.day,Asym, xmid, scal)),newdata=data.frame(j.day=min(j.day):max(j.day))),
    j.day=min(j.day):max(j.day),
   )%>%
   left_join(mc%>%dplyr::select(j.day,date))
@@ -147,16 +146,16 @@ mc.arrive.date%>%
   ggplot(aes(year,j.day))+geom_point()
 
 weather.d <- weather.d%>%
-  mutate(year=as.integer(str_sub(date,1,4)), #add year
+  mutate(year=as.integer(str_sub(date,1,4)), 
          date=as.Date(date))%>%
-  group_by(year)%>% #group by year so we can compute julian day
- mutate(j.day=julian(date,origin=as.Date(paste0(unique(year),"-01-01"))), #add julian day
+  group_by(year)%>% 
+ mutate(j.day=julian(date,origin=as.Date(paste0(unique(year),"-01-01"))), 
   date2=date,
-  wdir.rad=(180-abs(wdf2-180))*pi/180, #radians so we can use a trig function to compute wind vector, scale degrees first to 180 scale to 2x pi and subtract from 180 (wind comes out of a direction)
-  wvec=cos(wdir.rad)*-1*awnd # we want a negative value for positive value for 2x pi
-  )%>% #store day in new column
-  dplyr::select(id,year,date2,j.day,tmin,tmax,wvec)%>% #select the rows we need
-  left_join(sta.d%>%select(id,name,migr.day))%>% #add the station id info (ie. name)
+  wdir.rad=(180-abs(wdf2-180))*pi/180, 
+  wvec=cos(wdir.rad)*-1*awnd 
+  )%>% 
+  dplyr::select(id,year,date2,j.day,tmin,tmax,wvec)%>% 
+  left_join(sta.d%>%select(id,name,migr.day))%>% 
   mutate(j.day=j.day+migr.day)
 mc.arr.weath <- mc.arrive.date%>%
   left_join(weather.d)%>%
