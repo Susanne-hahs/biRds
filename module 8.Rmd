@@ -20,6 +20,8 @@ library(cowplot)
 library(lme4)
 library(car) 
 library(data.table) 
+library(knitr)
+library(kableExtra)
 ```
 
 ## Introduction 
