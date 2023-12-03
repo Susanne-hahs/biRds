@@ -130,7 +130,7 @@ mc%>%
 mc.pred <- mc%>%
   group_by(year)%>%
  summarize(
-   pred=predict(nls(prop~SSlogis(j.day,Asym, xmid, scal)),newdata=data.frame(j.day=min(j.day):max(j.day))),
+   pred=predict(nls(prop~SSlogis(j.day,Asym, xmid, scal)),newdata=data.frame(j.day=min(j.day):max(j.day))),#predict the logistic curve for each species
    j.day=min(j.day):max(j.day),
   )%>%
   left_join(mc%>%dplyr::select(j.day,date))
@@ -152,8 +152,7 @@ weather.d <- weather.d%>%
  mutate(j.day=julian(date,origin=as.Date(paste0(unique(year),"-01-01"))), 
   date2=date,
   wdir.rad=(180-abs(wdf2-180))*pi/180, 
-  wvec=cos(wdir.rad)*-1*awnd 
-  )%>% 
+  wvec=cos(wdir.rad)*-1*awnd) %>%
   dplyr::select(id,year,date2,j.day,tmin,tmax,wvec)%>% 
   left_join(sta.d%>%select(id,name,migr.day))%>% 
   mutate(j.day=j.day+migr.day)
@@ -192,7 +191,6 @@ Anova(best.lmer)
 
 
 ## Discussion 
-
 
 ## Author Contributions
 Alexandra Hoogendijk: Results
