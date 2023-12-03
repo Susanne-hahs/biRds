@@ -194,6 +194,7 @@ Anova(best.lmer)
 
 ## Discussion 
 
+
 ## Author Contributions
 Alexandra Hoogendijk: Results
 
@@ -202,7 +203,6 @@ Ava Skogstrom
 Tara Gerjarusak	
 
 Susanne Hahs: Introduction, Methods, Bibliography
-
 
 
 ## References
