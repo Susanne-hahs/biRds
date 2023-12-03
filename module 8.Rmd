@@ -13,13 +13,13 @@ library(tidyverse)
 library(MuMIn)
 library(rnoaa)
 library(data.table)
-library(ggmap) ###
-library(usmap) ###
+library(ggmap) 
+library(usmap) 
 library(magick)
-library(cowplot) #####
+library(cowplot) 
 library(lme4)
 library(car) 
-library(data.table) ######
+library(data.table) 
 ```
 
 ## Introduction 
