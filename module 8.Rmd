@@ -195,7 +195,7 @@ Anova(best.lmer)
 ## Discussion 
 
 ## Author Contributions
-Alexandra Hoogendijk
+Alexandra Hoogendijk: Results
 
 Ava Skogstrom	
 
