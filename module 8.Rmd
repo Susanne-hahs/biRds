@@ -8,6 +8,18 @@ bibliography: "BIOL3140.bib"
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(rgbif)
+library(tidyverse)
+library(MuMIn)
+library(rnoaa)
+library(data.table)
+library(ggmap) ###
+library(usmap) ###
+library(magick)
+library(cowplot) #####
+library(lme4)
+library(car) 
+library(data.table) ######
 ```
 
 ## Introduction 
@@ -29,6 +41,11 @@ Wind direction was computed using weather data, and the results were integrated 
 Moreover, we constructed a Linear Mixed-effect Model using the lme package for both the single-day and two-week average weather datasets. An Anova test was conducted to identify the model with the best fit, and model testing was done with the dredge() function. This approach allowed us to comprehensively explore the intricate relationship between weather parameters and the arrival dynamics of the selected TGM bird species along their migratory journey. 
 
 ## Results 
+```{r, include=FALSE}
+
+```
+
+
 ## Discussion 
 
 ## Author Contributions
