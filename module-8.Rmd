@@ -176,7 +176,7 @@ best.lmer <-  lmer(j.day~wk.tmin+wk.tmax+wk.wvec+(1|name),mc.arr.weath2,na.actio
 
 Anova(best.lmer)
 ```
-
+The Anova (analysis of variance) shows that each (tmin,tmax,wvec) is significant. 
 
 ## Discussion 
 The best-fit model includes minimum and maximum temperature and wind vector. According to the ANOVA test, all three aforementioned factors are significant predictors. 
