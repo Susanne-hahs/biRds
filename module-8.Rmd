@@ -63,7 +63,7 @@ head(dat)
 The results above were from a for loop  that gets the occurence data in in MA during April and May in the years 2000-2019.  
 
 ```{r, echo=FALSE, message=FALSE}
-saveRDS(dat,"massbird.data.RDS")
+saveRDS(data,"massbird.data.RDS")
 dat <- readRDS("massbird.data.RDS")
 
 dat%>%
