@@ -36,7 +36,7 @@ Wind direction, calculated from weather data, was integrated with species data. 
 
 
 ## Results 
-```{r, include=FALSE}
+```{r, echo=FALSE, message =FALSE}
 raven <- occ_data(scientificName = "Corvus corax", stateProvince="Maine", limit=200,year=2018)
 
 ME<- map_data('state', 'maine')
@@ -73,7 +73,10 @@ dat.l[[paste0(s)]] <- occ_data(scientificName = s,year=y,month=m,
 dat <- rbindlist(dat.l,fill=T)
 
 head(dat)
+```
+The results above were from a for loop  that gets the occurence data in in MA during April and May in the years 2000-2019.  
 
+```{r, echo=FALSE, message=FALSE}
 saveRDS(data,"massbird.data.RDS")
 
 dat%>%
