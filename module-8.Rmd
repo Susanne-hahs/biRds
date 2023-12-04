@@ -191,11 +191,18 @@ Anova(best.lmer)
 
 
 ## Discussion 
+The best-fit model includes minimum and maximum temperature and wind vector. According to the ANOVA test, all three aforementioned factors are significant predictors. 
+
+In regard to wind as a migratory factor, many migratory birds migrate at night utilizing landmarks in the night sky and the absence of daytime thermals. In addition, winds tend to be more mild or tailwinds. However, climate change affects multiple factors in our environment including atmospheric circulation. There is evidence that some North American migratory birds will account for wind patterns and adjust their heading to avoid drift or fly at certain altitudes to take advantage of head- and tailwinds [@LaSorte2018]. 
+
+Maximum temperatures appear to have a more significant effect on arrival dates than minimum temperatures. In regard to this, a study conducted in 2012 examining the relationship between arrival date in North American migratory birds and warming temperatures showed that birds arrived earlier as temperature increased [@Hurlbert2012]. More specifically, species arrived 0.8 days earlier for every 1°C increase in temperature. In addition to this, they also saw species that would arrive 3-6 days earlier per 1°C of warming. Also in regard to local temperature changes, studies have shown differences in arrival date shifts between short-distance and long-distance migrants.
+
+While some species appear to be arriving earlier in correlation with rising temperatures, others are not. A 2015 study focusing on migratory birds in the northern Great Plains reported both significant changes in early and late arrival dates depending on the species [@Travers2015]. In all, the growing seasons for North American migratory birds are generally increasing. While both this experimental study and others suggest that species, including trans-Gulf migrants, are adjusting their arrival dates in relation to this change, the rate at which climate change is occurring may be too rapid for species to effectively adapt to.
 
 ## Author Contributions
 Alexandra Hoogendijk: Results
 
-Ava Skogstrom	
+Ava Skogstrom: Discussion, Bibliography 
 
 Tara Gerjarusak	
 
